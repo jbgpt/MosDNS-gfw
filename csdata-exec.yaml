@@ -1,0 +1,7 @@
+data_providers:
+  - tag: geoip 
+    file: "/var/mosdns/geoip.dat"
+    auto_reload: true 
+  - tag: geosite 
+    file: "/var/mosdns/geosite.dat"
+    auto_reload: true 
