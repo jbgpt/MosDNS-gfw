@@ -10,20 +10,20 @@ plugins:
   - tag: geoip_private # 私网 ip
     type: ip_set
     args:
-      files:
-        - "/var/mosdns/geoip_private.txt"
+      matches:
+        - "geoip:private"
   - tag: geoip_cn # cn ip
     type: ip_set
     args:
-      files:
-        - "/var/mosdns/geoip_cn.txt"
+      matches:
+        - "geoip:cn"
 
   - tag: geosite_cn # cn 域名
     type: domain_set
     args:
-      files:
-        - "/var/mosdns/geosite_cn.txt"
-        - "/etc/mosdns/rule/whitelist.txt"
+      matches:
+        - "geosite:cn"
+        - "geosite:apple-cn"
   - tag: geosite_gfw # gfw 域名
     type: domain_set
     args:
@@ -33,13 +33,13 @@ plugins:
   - tag: geosite_location-!cn # 非 cn 域名
     type: domain_set
     args:
-      files:
-        - "/var/mosdns/geosite_geolocation-!cn.txt"
+      matches:
+        - "geosite:geolocation-!cn"
   - tag: geosite_ads-all # 广告域名
     type: domain_set
     args:
-      files:
-        - "/var/mosdns/geosite_category-ads-all.txt"
+      matches:
+        - "geosite:category-ads-all"
 
   ################# 可执行插件 ################
 
